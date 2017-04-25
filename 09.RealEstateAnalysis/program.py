@@ -1,6 +1,7 @@
 import csv
 import os
 
+from dataTypes import Purchase
 
 def main():
 
@@ -24,8 +25,7 @@ def getDataFile():
 
 def loadData(datFile):
     with open(datFile, 'r', encoding='utf-8') as fin:
-        reader = csv.DictReader(fin)
-        print(reader)
+        yield [Purchase.createFromDict(row) for row in csv.DictReader(fin)]
 
 
 def queryData(loadedData):
