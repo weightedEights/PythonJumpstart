@@ -4,6 +4,7 @@ import statistics
 
 from dataTypes import Purchase
 
+
 def main():
 
     printHeader()
@@ -55,9 +56,6 @@ def queryData(loadedData):
 
     print("The average 2-bedroom home price is ${:,} with {} baths and {} sq ft.".format(
         int(avg_price), round(avg_baths, 1), round(avg_sqft, 1)))
-
-
-    return loadedData
 
 
 if __name__ == '__main__':
